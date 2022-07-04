@@ -1,7 +1,10 @@
 import mappers.OscarMapper;
 import models.OscarModel;
+import services.OscarServices;
 import util.FileUtil;
 import java.io.IOException;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 public class App
 {
@@ -13,8 +16,13 @@ public class App
         var dadosOscarMale = oscarMale.readFile(new OscarMapper());
         var dadosOscarFemale = oscarFemale.readFile(new OscarMapper());
 
-        dadosOscarFemale.forEach(System.out::println);
-        dadosOscarMale.forEach(System.out::println);
+        var dadosOscarMaleFemale = Stream.concat(dadosOscarFemale.stream(), dadosOscarMale.stream()).collect(Collectors.toList());
+
+        OscarServices oscarServices = new OscarServices(dadosOscarMaleFemale);
+//        oscarServices.youngestActor();
+        oscarServices.mostRewardedActor();
+
+
 
     }
 }
