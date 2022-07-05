@@ -21,6 +21,7 @@ public class App
         OscarServices oscarServices = new OscarServices(dadosOscarMaleFemale);
         oscarServices.youngestActor();
         oscarServices.mostRewardedActor();
+        oscarServices.mostRewardedActor18_24();
 
 
 

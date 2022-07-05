@@ -55,4 +55,16 @@ public class OscarModel {
     public void setMovie(String movie) {
         this.movie = movie;
     }
+
+
+    @Override
+    public String toString() {
+        return "OscarModel{" +
+                "index=" + index +
+                ", year=" + year +
+                ", age=" + age +
+                ", name='" + name + '\'' +
+                ", movie='" + movie + '\'' +
+                '}';
+    }
 }
